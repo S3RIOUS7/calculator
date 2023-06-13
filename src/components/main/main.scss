@@ -1,0 +1,14 @@
+.allButtons{
+  display: grid;
+  grid-template-columns: 40px 40px 40px;
+ 
+}
+
+.btn{
+    border-radius: 75%;
+    height: 35px;
+    width: 35px;
+    font-size: 20px;
+    background-color: aquamarine;
+    
+}
