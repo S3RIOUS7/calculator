@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "/Projects/reactProjects/calculator/src/components/main/main.scss"
-
+import Input from "../input/Input";
 
 
 const numbersSign = [{id:0, text:0}, {id:1, text:1}, {id:2, text:2}, {id:3, text:3}, {id:4, text:4}, {id:5, text:5}, {id:6, text:6}, {id:7, text:7}, {id:8, text:8}, {id:9, text:9}, , {id:10, text:"."}, {id:11, text:"+"}, {id:12, text:"-"}, {id:13, text:"*"}, {id:14, text:"/"}, {id:15, text:"="}, {id:16, text:"C"}]
@@ -9,6 +9,11 @@ function Main (){
     const [displayText, setDisplayText] = useState("");
     const [saveText, setSaveText] = useState("");
     const [calculationResult, setCalculationResult] = useState("");
+    const [value, setValue] = useState('');
+
+
+    const getValueInput = (event) => {
+      setValue(event.target.value);}
 
     const ouputNumbers = (text, id) => {
 
@@ -37,6 +42,7 @@ function Main (){
             if (id in operations) {
               setCalculationResult(operations[id]);
             }
+
           }
           else if (id === 10) {
             if (!displayText.includes(".")) {
@@ -65,12 +71,13 @@ function Main (){
 //asd
     return(
     <div>
-       
-    <div className="allButtons">{numbersSign.map(content => (<div key = {content.id} ><button className="btn" onClick={() => ouputNumbers(content.text, content.id)} >{content.text}</button></div>))}</div>
+       <Input type='text' value={value} onChange={(event) => getValueInput(event)}/>
+    <div className="allButtons">{numbersSign.map(content => (<div key = {content.id} ><button className="btn" onClick={() => ouputNumbers(content.text, content.id)} >{content.text}</button></div>))}
+    </div>
+    <div>{saveText}</div>
+    
 
-    <div>{displayText}</div>
-    <div></div>
-
+    
     
     </div>
 )
