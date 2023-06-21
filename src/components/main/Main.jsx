@@ -24,7 +24,9 @@ function Main (){
         }
 
         if(id >= 0 && id <= 9){
-        setDisplayText(prevText => prevText + text);}
+        setDisplayText(prevText => prevText + text);
+      }
+
         else if(id === 16){
             setDisplayText('')
             setSaveText('')
@@ -44,7 +46,7 @@ function Main (){
             }
 
           }
-          else if (id === 10) {
+          else if (id === 10 ) {
             if (!displayText.includes(".")) {
               setDisplayText(prevText => prevText + text);
             }
@@ -66,15 +68,15 @@ function Main (){
               }
         }   
     };
-
+ 
     
 //asd
     return(
-    <div>
-       <Input type='text' value={value} onChange={(event) => getValueInput(event)}/>
-    <div className="allButtons">{numbersSign.map(content => (<div key = {content.id} ><button className="btn" onClick={() => ouputNumbers(content.text, content.id)} >{content.text}</button></div>))}
+    <div className="container">
+       <div className="inputMax"><Input type='text' value={displayText} onChange={(event) => getValueInput(event)} /></div>
+      <div className="allButtons">{numbersSign.map(content => (<div key = {content.id} ><button className={content.id >= 0 && content.id <= 10 ? "btn" : "btncount"} onClick={() => ouputNumbers(content.text, content.id)} >{content.text}</button></div>))}
     </div>
-    <div>{saveText}</div>
+      
     
 
     
