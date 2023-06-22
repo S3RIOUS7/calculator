@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "/Projects/reactProjects/calculator/src/components/main/main.scss"
+//import "/Projects/reactProjects/calculator/src/components/main/main.scss"
+import "./main.scss"
 import Input from "../input/Input";
 
 
@@ -9,11 +10,11 @@ function Main (){
     const [displayText, setDisplayText] = useState("");
     const [saveText, setSaveText] = useState("");
     const [calculationResult, setCalculationResult] = useState("");
-    const [value, setValue] = useState('');
+    
 
 
     const getValueInput = (event) => {
-      setValue(event.target.value);}
+      setDisplayText(event.target.value);}
 
     const ouputNumbers = (text, id) => {
 
@@ -74,7 +75,8 @@ function Main (){
     return(
     <div className="container">
        <div className="inputMax"><Input type='text' value={displayText} onChange={(event) => getValueInput(event)} /></div>
-      <div className="allButtons">{numbersSign.map(content => (<div key = {content.id} ><button className={content.id >= 0 && content.id <= 10 ? "btn" : "btncount"} onClick={() => ouputNumbers(content.text, content.id)} >{content.text}</button></div>))}
+      <div className="allButtons">
+        {numbersSign.map(content => (<div key = {content.id} ><button className={content.id === 16 ? "btnClear" : content.id <= 10 ? "btn" : "btncount" } onClick={() => ouputNumbers(content.text, content.id)}>{content.text}</button></div>))}
     </div>
       
     

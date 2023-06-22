@@ -17,6 +17,16 @@
     display: grid;
     grid-template-columns: 65px 65px 65px;
     align-self: center;
+   .btnClear{
+    border-radius: 10px;
+    height: 57px;
+    width:114px;
+    font-size: 25px;
+    background-color: aquamarine;
+    margin: 10px 5px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+   }
+   
     
   .btn{
     border-radius: 75%;
@@ -26,29 +36,30 @@
     background-color: aquamarine;
     margin: 10px 5px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    .btn:hover{
-      background-color: orange;
+   
+    &:hover{
+      opacity: 0.8;  
+  background-color: papayawhip; 
     }
 }
     .btncount{
-  border-radius: 75%;
+    border-radius: 75%;
     height: 57px;
     width: 57px;
     font-size: 25px;
     background-color: orange;
     margin: 10px 5px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-}
-}
-.btn:hover{
-opacity: 0.8;  
-background-color: papayawhip;
-}
-.btncount:hover{
+    &:hover{
   opacity: 0.8;  
   background-color: papayawhip;
+} 
+    }
 }
+
 }
+
+
 
 
 
