@@ -9,18 +9,18 @@
     Input{
     height: 30px;
     font-size: 25px;
-    width: 180px;
+    width: 250px;
    margin-left: 5px;
  }
 }
   .allButtons{
     display: grid;
-    grid-template-columns: 65px 65px 65px;
+    grid-template-columns: 65px 65px 65px 65px;
     align-self: center;
    .btnClear{
     border-radius: 10px;
     height: 57px;
-    width:114px;
+     width:250px;
     font-size: 25px;
     background-color: aquamarine;
     margin: 10px 5px;
